@@ -123,4 +123,5 @@ Troubleshooting
 Conclusion
 ----------
 This project creates a Layer 2 VPN, allowing distant devices to communicate over the internet as if they were on the same LAN. It's useful for creating virtual network environments for testing or secure private communication.
-inspired ftom https://github.com/peiyuanix/build-your-own-zerotier/tree/master
+
+**inspired from** https://github.com/peiyuanix/build-your-own-zerotier/tree/master
