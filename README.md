@@ -8,7 +8,7 @@ This project implements a Layer 2 VPN, similar to Zerotier, with a Virtual Switc
 
 The system consists of a server (VSwitch) and clients (VPort) that connect through the internet to form a private virtual network. Devices connected to the VPN can exchange Ethernet frames directly, using MAC addresses.
 
-Background Knowledge
+Rappel
 --------------------
 What is a Virtual Switch?
 - A network switch connects devices within a network and forwards data frames based on MAC addresses. A virtual switch (VSwitch) operates at OSI Layer 2, emulating this functionality over the internet.
@@ -89,37 +89,33 @@ Copier le code
 
 ### Step 3: Run VSwitch on the Server
 On the server, start VSwitch by specifying the port to listen on:
+```python
 python3 vswitch.py 5555
-
-vbnet
-Copier le code
+```
 
 ### Step 4: Run and Configure VPort on Each Client
 On each client, run the following commands to connect to the VSwitch and configure the TAP device:
 
 1. Run VPort with the server's IP and port:
+```bash
 sudo ./vport SERVER_IP 5555
+```
 
-sql
-Copier le code
-
-2. Configure the TAP device with a unique IP in the same subnet:
-sudo ip addr add 10.1.1.101/24 dev tapyuan sudo ip link set tapyuan up
-
-javascript
-Copier le code
+3. Configure the TAP device with a unique IP in the same subnet:
+```bash
+sudo ip addr add 10.1.1.101/24 dev tapyuan sudo ip link set yourtap up
+```
 
 Repeat this for additional clients with different IPs (e.g., `10.1.1.102` for a second client).
 
 ### Step 5: Test Connectivity
 Use `ping` from one client to another to confirm connectivity:
+```bash
 ping 10.1.1.102
-
-markdown
-Copier le code
+```
 
 Troubleshooting
----------------
+-----------------------
 - **Connection Issues**: Ensure that the server's IP and port are reachable and that firewalls allow UDP traffic.
 - **Permission Errors**: Ensure you have root or sudo privileges to configure TAP devices.
 - **Latency**: Expect some delay due to the geographic distance and internet speed.
@@ -127,4 +123,4 @@ Troubleshooting
 Conclusion
 ----------
 This project creates a Layer 2 VPN, allowing distant devices to communicate over the internet as if they were on the same LAN. It's useful for creating virtual network environments for testing or secure private communication.
-https://github.com/peiyuanix/build-your-own-zerotier/tree/master
+inspired ftom https://github.com/peiyuanix/build-your-own-zerotier/tree/master
