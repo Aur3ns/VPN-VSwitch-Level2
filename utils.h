@@ -18,6 +18,7 @@
     exit(EXIT_FAILURE);                 \
 } while(0)
 
-int tap_alloc(char *dev);  // Move tap_alloc function here
+// Prototype de la fonction pour allouer un périphérique TAP
+int tap_alloc(char *dev);
 
-#endif
+#endif  // _UTILS_H
