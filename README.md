@@ -75,10 +75,9 @@ How to Build and Deploy
 
 ### Step 1: Clone the repository
 On the server and each client:
+```bash
 git clone https://github.com/your-repo/virtual-switch cd virtual-switch
-
-vbnet
-Copier le code
+```
 
 ### Step 2: Build the Project
 Compile the project on each machine by running:
