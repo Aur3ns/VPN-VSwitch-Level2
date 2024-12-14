@@ -81,10 +81,9 @@ git clone https://github.com/your-repo/virtual-switch cd virtual-switch
 
 ### Step 2: Build the Project
 Compile the project on each machine by running:
+```c
 make
-
-vbnet
-Copier le code
+```
 
 ### Step 3: Run VSwitch on the Server
 On the server, start VSwitch by specifying the port to listen on:
